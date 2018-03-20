@@ -2,7 +2,7 @@ version: '2'
 services:
 
     django-slave-2:
-      image: kartoza/postgis:9.6-2.4
+      build: docker-postgis
       container_name: agritechnovation-gis-db-slave-2
       restart: always
       environment:
