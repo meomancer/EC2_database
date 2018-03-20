@@ -1,10 +1,12 @@
 version: '2'
 services:
 
-    django-slave:
+    django-slave-2:
       image: kartoza/postgis:9.6-2.4
-      container_name: agritechnovation-django-db-slave
+      container_name: agritechnovation-django-db-slave-2
       restart: always
+      volumes:
+        - ./backups:/backups
       environment:
         ALLOW_IP_RANGE: '0.0.0.0/0'
         REPLICATE_FROM: '169.255.170.137'
@@ -21,8 +23,6 @@ services:
       build: docker-postgis
       container_name: agritechnovation-gis-db-slave
       restart: always
-      volumes:
-        - ./backups:/backups
       environment:
         ALLOW_IP_RANGE: '0.0.0.0/0'
         REPLICATE_FROM: '169.255.170.137'
