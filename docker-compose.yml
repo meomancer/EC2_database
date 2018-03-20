@@ -9,8 +9,8 @@ services:
         ALLOW_IP_RANGE: '0.0.0.0/0'
         REPLICATE_FROM: '169.255.170.137'
         REPLICATE_PORT: '6001'
-        USERNAME: 'docker'
-        PASS: 'Agritechnovation!#%'
+        POSTGRES_USER: 'docker'
+        POSTGRES_PASS: 'Agritechnovation!#%'
 
       # You can expose the port to observe it in your local machine
       # For this sample, it was disabled by default to allow scaling test
@@ -25,8 +25,8 @@ services:
         ALLOW_IP_RANGE: '0.0.0.0/0'
         REPLICATE_FROM: '169.255.170.137'
         REPLICATE_PORT: '6001'
-        USERNAME: 'docker'
-        PASS: 'Agritechnovation!#%'
+        POSTGRES_USER: 'docker'
+        POSTGRES_PASS: 'Agritechnovation!#%'
 
       # You can expose the port to observe it in your local machine
       # For this sample, it was disabled by default to allow scaling test
