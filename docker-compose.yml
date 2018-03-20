@@ -1,0 +1,36 @@
+version: '2'
+services:
+
+    django-slave:
+      image: kartoza/postgis:9.6-2.4
+      container_name: agritechnovation-django-db-slave
+      restart: always
+      environment:
+        ALLOW_IP_RANGE: '0.0.0.0/0'
+        REPLICATE_FROM: '169.255.170.137'
+        REPLICATE_PORT: '6000'
+        USERNAME: 'docker'
+        PASS: 'docker'
+
+      # You can expose the port to observe it in your local machine
+      # For this sample, it was disabled by default to allow scaling test
+      ports:
+        - "6000:5432"
+
+    gis-slave:
+      build: docker-postgis
+      container_name: agritechnovation-gis-db-slave
+      restart: always
+      volumes:
+        - ./backups:/backups
+      environment:
+        ALLOW_IP_RANGE: '0.0.0.0/0'
+        REPLICATE_FROM: '169.255.170.137'
+        REPLICATE_PORT: '6001'
+        USERNAME: 'docker'
+        PASS: 'docker'
+
+      # You can expose the port to observe it in your local machine
+      # For this sample, it was disabled by default to allow scaling test
+      ports:
+        - "6001:5432"
