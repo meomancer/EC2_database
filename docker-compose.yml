@@ -26,7 +26,7 @@ services:
         REPLICATE_FROM: '169.255.170.137'
         REPLICATE_PORT: '6001'
         USERNAME: 'docker'
-        PASS: 'docker'
+        PASS: 'Agritechnovation!#%'
 
       # You can expose the port to observe it in your local machine
       # For this sample, it was disabled by default to allow scaling test
