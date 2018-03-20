@@ -45,4 +45,4 @@ db-gis-slave-restore:
 	-@docker exec -t -i $(PROJECT_ID)-gis-db-slave su - postgres -c "dropdb gis"
 	@docker exec -t -i $(PROJECT_ID)-gis-db-slave su - postgres -c "createdb -O docker -T template_postgis gis"
 	@docker exec -t -i $(PROJECT_ID)-gis-db-slave su - postgres -c "psql -f /backups/[global]latest-gis.sql postgres"
-	@docker exec -t -i $(PROJECT_ID)-gis-db-slave pg_restore /backups/latest-gis.dmp | docker exec -i $(PROJECT_ID)-qgis-db su - postgres -c "psql gis"
+	@docker exec -t -i $(PROJECT_ID)-gis-db-slave pg_restore /backups/latest-gis.dmp | docker exec -i $(PROJECT_ID)-gis-db-slave su - postgres -c "psql gis"
