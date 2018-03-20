@@ -3,7 +3,7 @@ services:
 
     django-slave-2:
       image: kartoza/postgis:9.6-2.4
-      container_name: agritechnovation-django-db-slave-2
+      container_name: agritechnovation-gis-db-slave-2
       restart: always
       volumes:
         - ./backups:/backups
